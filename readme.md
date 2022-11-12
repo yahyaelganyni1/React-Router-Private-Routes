@@ -27,7 +27,10 @@ import { Navigate, Outlet } from 'react-router-dom';
 
 export default function PrivateRoute() {
     const isAuthenticated = false; // check if the user is authenticated.
-  /*  In a real application, you would want to store the authentication state in a global state management library like Redux or MobX and check the authentication state here. */
+  /*
+  In a real application, you would want to store the authentication state in a global state management
+  library like Redux or MobX and check the authentication state here.
+  */
 
   return isAuthenticated ? <Outlet /> : <Navigate to="/login" />;
 }
