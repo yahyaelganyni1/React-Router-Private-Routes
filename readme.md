@@ -155,48 +155,9 @@ export default function Login() {
 
 In the code above, we are using the `useLocation` hook to get the previous route and the `useNavigate` hook to redirect the user to the previous route after they login. We are also using the `Navigate` component in the `PrivateRoute` component to redirect the user to the `Login` component if they are not authenticated.
 
-## how to prevent a user from accessing a route if they are authenticated
+## conclusion
 
-Let's prevent a user from accessing the `Login` component if they are authenticated.
-
-```jsx
-import { Navigate, Outlet } from 'react-router-dom';
-
-export default function notAuthenticatedRoute() {
-  const isAuthenticated = false;
-
-  return isAuthenticated ? <Navigate to="/dashboard" /> : <Outlet />;
-}
-```
-
-In the code above, we are using the `Navigate` component to redirect the user to the `/dashboard` route if they are authenticated. We are also using the `Outlet` component to render the child routes of the `notAuthenticatedRoute` component.
-
-## how to use a not authenticated route
-
-Let's use the `notAuthenticatedRoute` component in our `App` component.
-
-```jsx
-import { Routes, Route } from 'react-router-dom';
-import PrivateRoute from './PrivateRoute';
-import notAuthenticatedRoute from './notAuthenticatedRoute';
-import Dashboard from './Dashboard';
-import Login from './Login';
-
-export default function App() {
-  return (
-    <Routes>
-      <Route path="/" element={<PrivateRoute />}>
-        <Route path="dashboard" element={<Dashboard />} />
-      </Route>
-      <Route path="/login" element={<notAuthenticatedRoute />}>
-        <Route path="/" element={<Login />} />
-      </Route>
-    </Routes>
-  );
-}
-```
-
-In the code above, we are using the `notAuthenticatedRoute` component as the parent route of the `Login` component. This means that the `Login` component will only be rendered if the user is not authenticated and will be redirected to the `Dashboard` component if they are authenticated. We are also using the `PrivateRoute` component as the parent route of the `Dashboard` component. This means that the `Dashboard` component will only be rendered if the user is authenticated and will be redirected to the `Login` component if they are not authenticated.
+we have learned how to implement private routes in our application. We have also learned how to redirect a user to a specific route after login and how to redirect a user to the previous route after login.
 
 ---
 
@@ -211,4 +172,3 @@ also follow me.
 - GitHub: [github](https://github.com/yahyaelganyni1)
 - Twitter: [@YElganayni](https://twitter.com/YElganayni)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/yahya-el-ganayni-a456115b/)
-
