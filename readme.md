@@ -197,3 +197,18 @@ export default function App() {
 ```
 
 In the code above, we are using the `notAuthenticatedRoute` component as the parent route of the `Login` component. This means that the `Login` component will only be rendered if the user is not authenticated and will be redirected to the `Dashboard` component if they are authenticated. We are also using the `PrivateRoute` component as the parent route of the `Dashboard` component. This means that the `Dashboard` component will only be rendered if the user is authenticated and will be redirected to the `Login` component if they are not authenticated.
+
+---
+
+Thanks for reading.
+
+if you liked the tutorial please give it a star 🌟
+
+also follow me.
+
+**Yahya EL Ganayni**
+
+- GitHub: [github](https://github.com/yahyaelganyni1)
+- Twitter: [@YElganayni](https://twitter.com/YElganayni)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/yahya-el-ganayni-a456115b/)
+
